@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Invitation</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('KO.png') no-repeat center center;
+    background-size: cover;
+    transition: filter 0.8s ease;
+  }
+
+  .bg.blur {
+    filter: blur(8px) brightness(0.9);
+  }
+
+  .click-area {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 240px;
+    height: 240px;
+    cursor: pointer;
+  }
+
+  .letter {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, 50px) scale(0.95);
+    opacity: 0;
+
+    width: 90%;
+    max-width: 360px;
+    height: 75vh;
+
+    padding: 40px 25px;
+
+    background: #f4efe6;
+    border-radius: 10px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+
+    text-align: center;
+    overflow-y: auto;
+
+    transition: all 0.9s ease;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .letter.show {
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+
+  /* Gold heading */
+  h1 {
+    margin-top: 10px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    color: #c6a85b;
+    text-transform: uppercase;
+  }
+
+  /* Script names */
+  .names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 40px;
+    margin: 20px 0;
+    color: #3e4a3f;
+  }
+
+  p {
+    font-size: 15px;
+    margin: 10px 0;
+    line-height: 1.6;
+    color: #555;
+  }
+
+  .divider {
+    margin: 20px auto;
+    width: 60px;
+    height: 1px;
+    background: #c6a85b;
+  }
+
+  .section {
+    margin-top: 20px;
+    padding: 18px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.6);
+  }
+
+  .section-title {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #3e4a3f;
+    font-size: 18px;
+  }
+
+  .icon {
+    font-size: 22px;
+    margin-bottom: 8px;
+    color: #c6a85b;
+  }
+
+</style>
+</head>
+
+<body>
+
+<div class="bg" id="bg"></div>
+
+<div class="click-area" onclick="openLetter()"></div>
+
+<div class="letter" id="letter">
+
+  <h1>FTESË NGA FAMILJA MORINA PËR MARTESËN E</h1>
+
+  <div class="names">Kushtrim & Olta</div>
+
+  <p>Jeni të ftuar të merrni pjesë në ditën tonë më të veçantë...</p>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="icon">📍</div>
+    <div class="section-title">Electroni Events</div>
+    <p>E Ejte , 13 Gusht , 2026</p>
+    <p>Ora 19:00</p>
+    <p>Rruga 17 Shkurti , Greikoc, Suharekë 23000</p>
+  </div>
+
+  <div class="section">
+    <div class="icon">🥂</div>
+    <div class="section-title">Mos mungoni</div>
+    <p>Parapritje në oborrin e restorantit</p>
+    <p>18:00</p>
+    <p>Ju mirëpresim me shumë dashuri.</p>
+  </div>
+
+</div>
+
+<script>
+  function openLetter() {
+    document.getElementById("letter").classList.add("show");
+    document.getElementById("bg").classList.add("blur");
+  }
+</script>
+
+</body>
+</html>
